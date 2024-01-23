@@ -7,8 +7,11 @@
 </head>
 <body>
    <h1>your random no is : 
-    <!-- <%= num %> -->
-    <%= Math.floor(Math.random()*6)+1 %>
+    <%= num %>
+    <!-- <%= Math.floor(Math.random()*6)+1 %> -->
+    <% if(num==6) { %>
+        <h2>Nice Bete</h2>
+        <% } %>
    </h1>
 </body>
 </html>

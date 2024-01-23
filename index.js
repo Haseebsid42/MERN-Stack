@@ -29,10 +29,26 @@ app.get("/",(req,res)=>{
 
 
 ////////-----ejs---------////
-app.get("/random",(req,res)=>{
-    ///--if data come from database then-----/
-    // let num=(Math.floor(Math.random()*6)+1);
-    // res.render(`your Random no is ${num}`);
-    res.render("random.ejs")
+// app.get("/random",(req,res)=>{
+//     ///--if data come from database then-----/
+//     // let num=(Math.floor(Math.random()*6)+1);
+//     // res.render(`your Random no is ${num}`);
+//     res.render("random.ejs")
 
+// })
+
+app.get("/ig/:username",(req,res)=>{
+    let {username}=req.params;
+   const instaData=require("./data.json");
+   const data=instaData[username];
+    res.render("instagram.ejs",{data});
+
+});
+
+
+////=-------cont=ditional statment using ejs----///
+
+app.get("/random",(req,res)=>{
+    let num= (Math.floor(Math.random()*6)+1);
+    res.render("random.ejs",{num});
 })
